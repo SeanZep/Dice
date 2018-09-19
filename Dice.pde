@@ -4,7 +4,7 @@ void setup()
 }
 void draw()
 {
-	//your code here
+	
 }
 void mousePressed()
 {
@@ -12,11 +12,13 @@ void mousePressed()
 }
 class Die //models one single dice cube
 {
-	//variable declarations here
+	int myNum, myX, myY;
 	
 	Die(int x, int y) //constructor
 	{
-		//variable initializations here
+		myNum = (int)(Math.random()*7);
+		myX = x;
+		myY = y;
 	}
 	void roll()
 	{
