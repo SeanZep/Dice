@@ -1,16 +1,21 @@
 int sum = 0;
 void setup()
 {
-	size(100, 100);
+	size(500, 510);
 	noLoop();
 }
 void draw()
 {
-	Die one = new Die(1, 1);
-	one.show();
-	one.roll();
+	background(197);
+	for(int y=0; y<500; y+=25){
+		for(int x=0; x<500; x+=25){
+			Die one = new Die(x, y);
+			one.show();
+			one.roll();
+		}
+	}
 	textSize(12);
-	text("SUM: "+sum, 0, 100);
+	text("SUM: "+sum, 0, 510);
 }
 void mousePressed()
 {
@@ -71,7 +76,6 @@ class Die //models one single dice cube
 	}
 	void show()
 	{
-		background(197);
 		fill(255);
 		rect(myX, myY, 20, 20, 5, 5, 5, 5);
 	}
