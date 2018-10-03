@@ -1,4 +1,7 @@
 int sum = 0;
+int r = 50;
+int g = 0;
+int b = 0;
 void setup()
 {
 	size(500, 510);
@@ -21,6 +24,9 @@ void mousePressed()
 {
 	sum = 0;
 	redraw();
+	r = 50;
+	g = 0;
+	b = 0;
 }
 class Die //models one single dice cube
 {
@@ -76,7 +82,17 @@ class Die //models one single dice cube
 	}
 	void show()
 	{
-		fill(255);
+		setColor();
 		rect(myX, myY, 20, 20, 5, 5, 5, 5);
 	}
+}
+void setColor(){
+	if(r < 100){
+		r++;
+	}else if(g < 100){
+		g++;
+	}else if(b < 200){
+		b++;
+	}
+	fill(r, g, b);
 }
